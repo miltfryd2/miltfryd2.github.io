@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="el">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Health Tracker App</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="manifest" href="manifest.json">
+    <script src="common.js" defer></script>
+  </head>
+  <body>
+
+    <div id="register">
+      <div id="initdesc" class="initdesc">Please register to the app</div>
+      <ul id="initialInfoList">
+        <!-- INITIAL PAGE-->
+        <li id="initList" class="initInfo">
+          <div>
+            <div class="red">
+              *Most of them cannot be changed later so be careful !
+            </div>
+            <div id="checkblanks" class="red"></div>
+            <div class="init">
+              <img src="assets/indexBtn.png" width="20px" /> Name/Surname:<br>
+              <input type="text" placeholder="Name Surname" id="initName" class="inputInit" />
+            </div>
+            <div class="init">
+              <img src="assets/indexBtn.png" width="20px" /> Country:<br>
+              <input type="text" placeholder="Country" id="initCountry" class="inputInit" />
+            </div>
+            <div class="init">
+              <img src="assets/indexBtn.png" width="20px" /> Birth Day:<br>
+              <input type="text" placeholder="Number" id="initbday" class="inputInit" />
+            </div>
+            <div class="init">
+              <img src="assets/indexBtn.png" width="20px" /> Birth Month:<br>
+              <input type="text" placeholder="Month" id="initbmonth" class="inputInit" />
+            </div>
+            <div class="init">
+              <img src="assets/indexBtn.png" width="20px" /> Birth Year:<br>
+              <input type="text" placeholder="Number" id="initbyear" class="inputInit" />
+            </div>
+            <div class="init">
+              <img src="assets/indexBtn.png" width="20px" /> Height:<br>
+              <input type="text" placeholder="Meters" id="initheight" class="inputInit" />
+            </div>
+            <div class="init">
+              <img src="assets/indexBtn.png" width="20px" /> Weight:<br>
+              <input type="text" placeholder="Kilograms" id="initweight" class="inputInit" />
+            </div>
+            <div class="complete">
+              <a href="#" id="readyRegister" class="readyRegister">
+                <img src="assets/complete.svg"
+              /></a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!--MAIN PAGE-->
+    <div id="mainPage" class="wrapper">
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#section-mydiet">My Diet</a></li>
+          <li><a href="https://www.eatthismuch.com/" target="_blank">Meal Planner</a></li>
+          <li><a href="https://habitica.com/static/home" target="_blank">Habitica</a></li>
+        </ul>
+      </nav>
+
+      <section class="info">
+        <div class="photo">
+          <img
+            src="assets/applesPNG2.png"
+            alt="A picture of many apples."
+          />
+        </div>
+        <div class="fewWords">
+          <h1 id="editableName">Your Name</h1>
+
+          <article id="healthtips">
+            <h2>Health Tips</h2>
+            <p id="editNotes">
+              It is important to be healthy. Health Tracker is your 
+              personal health diary. In this app you can keep track of your 
+              diet schedule. Do not forget to exercise well, drink enough water and eat healthy meals. 
+              Stay healthy, stay awesome!
+            </p>
+          </article>
+        </div>
+        <div class="info1">
+          <h2>Info</h2>
+
+          <table class="RowLeft">
+            <tr>
+              <th scope="row">Country:</th>
+              <td id="infocountry"> None </td>
+            </tr>
+            <tr>
+              <th scope="row">Birthday/Age</th>
+              <td> <span id="infobday"></span> <span id="infobmonth"></span> <span id="infobyear"></span> 
+                  (<span id="age">-</span> years old)</td>
+            </tr>
+            <tr>
+              <th scope="row">Height:</th>
+              <td><span id="infoheight">-</span> m</td>
+            </tr>
+            <tr>
+              <th scope="row">Weight:</th>
+              <td><span id="infoweight">-</span> kg</td>
+            </tr>
+            <tr>
+              <th scope="row">Body Mass Index(BMI):</th>
+              <td><span id="infobmi">-</span></td>
+            </tr>
+          </table>
+        </div>
+      </section>
+
+
+      <!--My diet food filter-->
+      <!--Dropdown Filter Menu-->
+      <div class="dropdown">
+        <button class="dropbtn">FILTER DIET</button>
+        <div id="filterDropdown" class="dropdown-content">
+          <input type="text" placeholder="Search..." id="searchFilterInput" />
+          <a href="#dropdown" class="nofilter">No Filter</a>
+          <ul id="dietList"></ul>
+        </div>
+      </div>
+
+
+      <!-- My Diet Section-->
+      <section id="section-mydiet" class="stats">
+        <div class="stats-1">
+          <table id="tablestats-1" class="myData table-sortable">
+            <caption>
+              <h2>My Diet &nbsp; <img src="assets/plus.png" alt="" id="editBTN" class="editbtn plus" title="Click to add a diet" width=25px></h2>
+            </caption>
+            <colgroup>
+              <col style="background-color: rgb(126, 255, 165)" />
+              <col style="background-color: rgb(169, 252, 194)" />
+              <col style="background-color: rgb(126, 255, 165)" />
+              <col style="background-color: rgb(169, 252, 194)" />
+            </colgroup>
+            <!-- Javascript Magic :) -->
+          </table>
+          <ul id="menu" class="absolute menuhidden"></ul>
+        </div>
+      </section>
+          
+
+      <footer>
+        <p>UoM Student mai21063 Homework &copy; 2021</p>
+      </footer>
+    </div>
+
+
+
+    <div id="editPage">
+      <div id="editdesc" class="editdesc">Here you can add more data</div>
+      <ul id="editInfoList">
+        <!-- INITIAL PAGE-->
+        <li id="editList" class="editInfo">
+          <div>
+            <div id="checkfilled" class="red"></div>
+            <div class="edit">
+              <img src="assets/indexBtn.png" width="20px" /> Type:<br>
+              <input type="text" placeholder="Eat/Drink" id="editType" class="editInput" />
+            </div>
+            <div class="edit">
+              <img src="assets/indexBtn.png" width="20px" /> Quantity:<br>
+              <input type="text" placeholder="Number" id="editQuantity" class="editInput" />
+            </div>
+            <div class="edit">
+              <img src="assets/indexBtn.png" width="20px" /> Food:<br>
+              <input type="text" placeholder="Food" id="editFood" class="editInput" />
+            </div>
+            <div class="decision">
+              <div class="editcomplete">
+                <a href="#" id="editRegister" class="editRegister">
+                  <img src="assets/complete.svg"
+                /></a>
+                <a href="#" id="editCancel" class="editCancel">
+                  <img src="assets/close.svg"
+                /></a>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+
+    <h4>
+      <span id="placeholder">A2HS</span>
+      <span><img src="assets/logo.svg" alt="Logo">Health Tracker App</span>
+      <span id="install">A2HS</span>
+    </h4>
+    
+
+    <hr />
+    <a href="#" class="btn">Jump to Top</a>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+
+>>Εδώ θα βρείτε την εφαρμογή(εργασία-εξέταση) μου (Health Diet Tracker):
+
+https://miltfryd2.github.io
+
+>>Το δεύτερο github μου: miltfryd2
+
+>>Παράδειγμα "εγγραφής" στην εφαρμογή:
+
+Mark Brown
+USA
+24
+July
+1993
+1.75
+80
